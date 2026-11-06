@@ -1,0 +1,47 @@
+// swift-tools-version: 5.6
+import PackageDescription
+
+let package = Package(
+    name: "MeetingEngine",
+    platforms: [.iOS("12.0")],
+    products: [
+        .library(name: "MeetingEngineCore", targets: ["MeetingEngineCore"]),
+        .library(name: "MeetingEngine", targets: ["MeetingEngine"]),
+    ],
+    targets: [
+        .target(name: "MeetingEngineCore", dependencies: ["AgoraAiEchoCancellationExtension", "AgoraAiEchoCancellationLLExtension", "AgoraAiNoiseSuppressionExtension", "AgoraAiNoiseSuppressionLLExtension", "AgoraAudioBeautyExtension", "AgoraClearVisionExtension", "AgoraContentInspectExtension", "AgoraFaceCaptureExtension", "AgoraFaceDetectionExtension", "AgoraFoundation", "AgoraLipSyncExtension", "AgoraReplayKitExtension", "AgoraRtcKit", "AgoraRte", "AgoraRtmKit", "AgoraSoundTouch", "AgoraSpatialAudioExtension", "AgoraVideoAv1EncoderExtension", "AgoraVideoEncoderExtension", "AgoraVideoQualityAnalyzerExtension", "AgoraVideoSegmentationExtension", "Agorafdkaac", "Agoraffmpeg", "FcrCore", "HyphenateChat", "ScribbleForge", "ScribbleForgeCore", "aosl", "video_dec", "video_enc"], linkerSettings: [.linkedFramework("Security"), .linkedLibrary("iconv"), .linkedLibrary("z")]),
+        .target(name: "MeetingEngine", dependencies: ["MeetingEngineCore", "AgoraUIFoundation", "FcrUIScene"]),
+        .binaryTarget(name: "AgoraFoundation", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraFoundation_abc4cc73fb92404b.zip", checksum: "abc4cc73fb92404b5038204608d0e8763b88fefcfef90bb66185b798c9910cee"),
+        .binaryTarget(name: "AgoraRte", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraRte_573ee85522653b55.zip", checksum: "573ee85522653b55202f782a3740c079c3c728acbc0d5f195a4cf84307b19b12"),
+        .binaryTarget(name: "AgoraUIFoundation", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraUIFoundation_01323d293c8c6840.zip", checksum: "01323d293c8c6840c1c47cb18dcb1e587e33edbee2a93b1e03518c21528e1032"),
+        .binaryTarget(name: "FcrCore", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_FcrCore_04c392cb758424cd.zip", checksum: "04c392cb758424cdadd806cc0b71c0d754d49523165f37f4a325cbcc4a380acc"),
+        .binaryTarget(name: "HyphenateChat", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_HyphenateChat_45396ee157e34a11.zip", checksum: "45396ee157e34a11610f6da139426ed4dadbf204100b761707e5e7aa427e4681"),
+        .binaryTarget(name: "ScribbleForge", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_ScribbleForge_35d300bc1899edff.zip", checksum: "35d300bc1899edff403d662796581ac3aaed224b9cdddbe30846bbe0027e965b"),
+        .binaryTarget(name: "ScribbleForgeCore", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_ScribbleForgeCore_24578bbc61057b54.zip", checksum: "24578bbc61057b54f1940ca51f9c39f8a511c9e80ba4fad3391875d438f8dab6"),
+        .binaryTarget(name: "FcrUIScene", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_FcrUIScene_3bf5d87f1946355f.zip", checksum: "3bf5d87f1946355f44b44d29f6131c5637620c1eda978aecfd224f8ae88acafb"),
+        .binaryTarget(name: "AgoraRtmKit", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraRtmKit_414aa217932ece6f.zip", checksum: "414aa217932ece6f504a263b1c4637427d9dcf6a93e0d038876cc6d7c41f46b2"),
+        .binaryTarget(name: "AgoraAiEchoCancellationExtension", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraAiEchoCancellationExtension_b8945c3fadc7beea.zip", checksum: "b8945c3fadc7beeabf51123de1d4faa10dcba2c5aa1d393a35fe7c8d34d0a4d3"),
+        .binaryTarget(name: "AgoraAiEchoCancellationLLExtension", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraAiEchoCancellationLLExtension_2dc9419a4076484a.zip", checksum: "2dc9419a4076484a61e41e174f63614e2bdbaf48e30106f8cf3d7fd4e66e4885"),
+        .binaryTarget(name: "AgoraAiNoiseSuppressionExtension", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraAiNoiseSuppressionExtension_cdc6c775264f7af2.zip", checksum: "cdc6c775264f7af266e5e01a77f25e85c926d200bd0f6344e5d1370c0925959d"),
+        .binaryTarget(name: "AgoraAiNoiseSuppressionLLExtension", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraAiNoiseSuppressionLLExtension_0ea99ac9d08495a4.zip", checksum: "0ea99ac9d08495a489cafbcaba3b1fb3bd7ffff3d542f5752c0675a851e4dcf8"),
+        .binaryTarget(name: "AgoraAudioBeautyExtension", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraAudioBeautyExtension_9488a2e26d1e3341.zip", checksum: "9488a2e26d1e334102a49b36355e946960b057247d71f4ee621ec388bd1b6374"),
+        .binaryTarget(name: "AgoraClearVisionExtension", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraClearVisionExtension_ee0c2d59b5b89429.zip", checksum: "ee0c2d59b5b894294e08b68315a2b974592e034cb38db0a24ba89da1c8b033b6"),
+        .binaryTarget(name: "AgoraContentInspectExtension", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraContentInspectExtension_ea76ca318949ea6a.zip", checksum: "ea76ca318949ea6a987d9fab015294981149f713e749beaea16ce580484e2623"),
+        .binaryTarget(name: "AgoraFaceCaptureExtension", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraFaceCaptureExtension_996d5b2a9d2d802c.zip", checksum: "996d5b2a9d2d802c10ffb68dc02d168eee3d122c3b2c44beeac93252c089ffcb"),
+        .binaryTarget(name: "AgoraFaceDetectionExtension", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraFaceDetectionExtension_76ec3f7eb0e54ac2.zip", checksum: "76ec3f7eb0e54ac2fe9911c7a9a9567e93c756f123ee9cdbaa6dc3b769edb676"),
+        .binaryTarget(name: "AgoraLipSyncExtension", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraLipSyncExtension_daef53462ef2db66.zip", checksum: "daef53462ef2db668889e7b6bfbb6dcc68c45297980ab9212d9a9d20fdb7209d"),
+        .binaryTarget(name: "AgoraReplayKitExtension", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraReplayKitExtension_552a9a05bf252112.zip", checksum: "552a9a05bf252112aa8da353aa89c9ed3ff40cb896b4e6cd87d9748b109cf4d6"),
+        .binaryTarget(name: "AgoraRtcKit", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraRtcKit_15f95efaa045fc95.zip", checksum: "15f95efaa045fc95c46faeafd1c0832247797e8e5079fa2e0a6e222b0310d9ab"),
+        .binaryTarget(name: "AgoraSoundTouch", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraSoundTouch_5acba76d676c61ea.zip", checksum: "5acba76d676c61eac7542a505ad9e7575b96e528310a6f95a04ca73d46d6a2ec"),
+        .binaryTarget(name: "AgoraSpatialAudioExtension", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraSpatialAudioExtension_7e907cb9a88ec58d.zip", checksum: "7e907cb9a88ec58de42e8a0d935bb9ab03fe4444bd2da6a005e8b4bd827c66fa"),
+        .binaryTarget(name: "AgoraVideoAv1EncoderExtension", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraVideoAv1EncoderExtension_31d87f22216bbd58.zip", checksum: "31d87f22216bbd58f246cc3cdca1a39db424eaa7f952f01a276df3348f2a918b"),
+        .binaryTarget(name: "AgoraVideoEncoderExtension", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraVideoEncoderExtension_72b0d46534231fa2.zip", checksum: "72b0d46534231fa2f9b93c3b474ca052c83c67e769a95b0c66c4e0f1f164033d"),
+        .binaryTarget(name: "AgoraVideoQualityAnalyzerExtension", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraVideoQualityAnalyzerExtension_0ef36c682d6fbe68.zip", checksum: "0ef36c682d6fbe68ca7188672d239269b940828b6eed3c6f76484b04b05ca830"),
+        .binaryTarget(name: "AgoraVideoSegmentationExtension", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_AgoraVideoSegmentationExtension_5d3879c0288a3211.zip", checksum: "5d3879c0288a3211e7473f73d2a4f481162fd535fada287c4f580b8009b8e351"),
+        .binaryTarget(name: "Agorafdkaac", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_Agorafdkaac_4c771664f716f954.zip", checksum: "4c771664f716f9549f698367b82aceab48f97c3b1b30b2a894c0a261bd3b7a5a"),
+        .binaryTarget(name: "Agoraffmpeg", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_Agoraffmpeg_b2dd457ce64a6b0a.zip", checksum: "b2dd457ce64a6b0a68c369af3a80e6b10039f17c16998161eb6ad4b9310614b9"),
+        .binaryTarget(name: "aosl", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_aosl_cbac96826be97d85.zip", checksum: "cbac96826be97d85eb5eefc33f3fa7f4c98655dd3188085a4dcb27fb1bccefce"),
+        .binaryTarget(name: "video_dec", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_video_dec_585f9eddff149e94.zip", checksum: "585f9eddff149e949756a028824e51bfe3c80a454639603dba6458cc927c910a"),
+        .binaryTarget(name: "video_enc", url: "https://solutions-apaas.agora.io/lib/ios/MeetingEngine_3.11.0-rc14_video_enc_d08efaae915a72c4.zip", checksum: "d08efaae915a72c435a74e9408c6852bc971a04528c43ce4b9ab8823f11493ce"),
+    ]
+)
