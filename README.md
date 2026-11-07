@@ -1,6 +1,6 @@
-# MeetingEngine 3.11.0-rc14
+# MeetingEngine 3.11.0-rc.14
 
-Add this Git repository in Xcode Package Dependencies and choose the exact version `3.11.0-rc14`.
+Add this Git repository in Xcode Package Dependencies and choose the exact version `3.11.0-rc.14`.
 
 - `MeetingEngine`: full UIScene and Core.
 - `MeetingEngineCore`: Core without UIScene/UIFoundation.
